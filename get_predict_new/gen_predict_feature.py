@@ -36,6 +36,7 @@ def test_images_to_array(data_dir):
     return X
 
 
+'''
 def get_features(model_name, data_preprocessor, input_size, data):
     input_layer = Input(input_size)
     preprocessor = Lambda(data_preprocessor)(input_layer)
@@ -47,6 +48,7 @@ def get_features(model_name, data_preprocessor, input_size, data):
 
     # print('Feature maps shape: ', feature_maps.shape)
     return feature_maps
+'''
 
 
 def get_features_from_model(model, ds, count=1):
@@ -61,8 +63,6 @@ def get_features_from_model(model, ds, count=1):
 
 def gen_vit_keras_test_feature(pics_array, specie_name='dog'):
     model_features = get_feature_model()
-    # img_arrays = test_images_to_array('pics')
-
     features_test = get_features_from_model(model_features, pics_array, count=1)
 
     return features_test
